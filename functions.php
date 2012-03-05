@@ -166,11 +166,10 @@ function plugin_admin_init(){
 	
 	add_settings_field('pin_follow_optin', 'Show Follow Button', 'pin_follow_optin', 'sdj_pip_plugin', 'plugin_main');
 	add_settings_field('pin_credit_optin', 'Hide Credits', 'pin_credit_optin', 'sdj_pip_plugin', 'plugin_main');
-
 }
 
 function plugin_pin_follow_text() {
-    echo '<p>Customise your twitter button with these few settings here.</p>';
+    echo '<p>Customise your Pinterest button with these few settings here.</p>';
 }
 
 function plugin_pin_img_text() {
