@@ -145,9 +145,9 @@ function sdj_pip_options_page() {
     </div>
     <div style="float:left; width:260px;">
         <h2>Pin Types</h2>
-        <p style="text-align:center;"><img src="<?php echo PLUGIN_FOLDER ?>images/pins.jpg"></p>     
+        <p style="text-align:center;"><img src="http://farm8.staticflickr.com/7066/6809517894_e1392c2428.jpg"></p>     
         <h2>Follow Button Types</h2>
-        <p style="text-align:center;"><img src="<?php echo PLUGIN_FOLDER ?>images/types.jpg"></p>
+        <p style="text-align:center;"><img src="http://farm8.staticflickr.com/7190/6809517936_3c17ce5872_m.jpg"></p>
     </div>
 
 <?
