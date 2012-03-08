@@ -37,7 +37,7 @@ Coming Soon
 
 == Changelog ==
 
-= 0.2 =
+= 0.3 =
 * Fixing of conflicting code
 * Addition of screenshots
 
