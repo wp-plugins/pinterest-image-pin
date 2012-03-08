@@ -30,11 +30,19 @@ Coming Soon
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the directory of the stable readme.txt, so in this case, `/tags/4.3/screenshot-1.png` (or jpg, jpeg, gif)
-2. This is the second screen shot
+1. Pinterest Image Pin with vertical count
+2. Plugin uses the full range of pinterest buttons
+3. Plugin uses the full range of pinterest badges too
+4. The default version of the button
 
 == Changelog ==
+
+= 0.2 =
+* Fixing of conflicting code
+* Addition of screenshots
+
+= 0.2 =
+* Image Fixes
 
 = 0.1 =
 * Creation of the plugin... Yay!

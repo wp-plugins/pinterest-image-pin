@@ -4,7 +4,7 @@ define("CREDIT_FOOT"    	, "\n<!---- END Pinterest Image Pin -------------->\n\n
 define("PLUGIN_FOLDER"		, get_bloginfo('wpurl') . "/wp-content/plugins/pinterest_image_pin/");
 
 
-function render_css() {
+function sdj_pip_render_css() {
 	
     echo CREDIT_HEAD .
 		 '<link type="text/css" rel="stylesheet" href="' . PLUGIN_FOLDER . 'sdj_pip_main.css" />' . 
@@ -13,7 +13,7 @@ function render_css() {
 }
 
 
-function modify_content($content){
+function sdj_pip_modify_content($content){
 	$options = get_option('sdj_pip_options');
 	
 	if(is_front_page()||is_category()){
@@ -78,7 +78,7 @@ function modify_content($content){
 }
 
 
-function render_footer_script(){
+function sdj_pip_render_footer_script(){
     $options = get_option('sdj_pip_options');
 	
 	if($options['pin_credit']!=1){
@@ -118,7 +118,7 @@ function render_footer_script(){
  * Admin Settings Related Bits
  *
  */
-function plugin_admin_add_page() {
+function sdj_pip_admin_add_page() {
     add_options_page('Custom Plugin Page', 'Pinterest Image Pin', 'manage_options', 'sdj_pip_plugin', 'sdj_pip_options_page');
 }
 
@@ -145,7 +145,7 @@ function sdj_pip_options_page() {
     </div>
     <div style="float:left; width:260px;">
         <h2>Pin Types</h2>
-        <p style="text-align:center;"><img src="http://farm8.staticflickr.com/7066/6809517894_e1392c2428.jpg"></p>     
+        <p style="text-align:center;"><img src="http://farm8.staticflickr.com/7066/6809517894_e1392c2428.jpg"></p>
         <h2>Follow Button Types</h2>
         <p style="text-align:center;"><img src="http://farm8.staticflickr.com/7190/6809517936_3c17ce5872_m.jpg"></p>
     </div>
@@ -154,7 +154,7 @@ function sdj_pip_options_page() {
 }
 
 
-function plugin_admin_init(){
+function sdj_pip_admin_init(){
     register_setting('sdj_pip_options', 'sdj_pip_options');
 	
     add_settings_section('plugin_main', 'Pinterest Follow Buttons', 'plugin_pin_follow_text', 'sdj_pip_plugin');
@@ -166,14 +166,11 @@ function plugin_admin_init(){
 	
 	add_settings_field('pin_follow_optin', 'Show Follow Button', 'pin_follow_optin', 'sdj_pip_plugin', 'plugin_main');
 	add_settings_field('pin_credit_optin', 'Hide Credits', 'pin_credit_optin', 'sdj_pip_plugin', 'plugin_main');
+
 }
 
 function plugin_pin_follow_text() {
     echo '<p>Customise your Pinterest button with these few settings here.</p>';
-}
-
-function plugin_pin_img_text() {
-    echo '<p>Customise your image pin options with these settings</p>';
 }
 
 function pin_username_string() {
