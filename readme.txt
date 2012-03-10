@@ -37,7 +37,7 @@ If you have any Q's you can get in touch with me on my Twitter account @shanejon
 
 == Changelog ==
 
-= 0.3 =
+= 0.4 =
 * Updating admin screen formatting
 
 = 0.3 =
