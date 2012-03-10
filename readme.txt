@@ -21,12 +21,12 @@ More features coming soon.
 
 1. If you have download the plugin you will need to the plugin folder to the `/wp-content/plugins/` directory on your server
    or
-1. Install the plugin using the plugins section of your wp-admin by searching for "Pinterest Image Pin" and installing as you would normally 
-2. Activate the plugin through the 'Plugins' menu in WordPress
+2. Install the plugin using the plugins section of your wp-admin by searching for "Pinterest Image Pin" and installing as you would normally 
+3. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Frequently Asked Questions ==
 
-Coming Soon
+If you have any Q's you can get in touch with me on my Twitter account @shanejones
 
 == Screenshots ==
 
@@ -36,6 +36,9 @@ Coming Soon
 4. The default version of the button
 
 == Changelog ==
+
+= 0.3 =
+* Updating admin screen formatting
 
 = 0.3 =
 * Fixing of conflicting code

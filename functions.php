@@ -5,6 +5,10 @@ define("PLUGIN_FOLDER"		, get_bloginfo('wpurl') . "/wp-content/plugins/pinterest
 
 
 function sdj_pip_render_css() {
+
+		wp_register_style	('basecss', plugins_url('sdj_pip_main.css', __FILE__), false);
+        wp_enqueue_style	('basecss');
+
 	
     echo CREDIT_HEAD .
 		 '<link type="text/css" rel="stylesheet" href="' . PLUGIN_FOLDER . 'sdj_pip_main.css" />' . 
@@ -131,23 +135,60 @@ function sdj_pip_options_page() {
         <?php settings_fields('sdj_pip_options') ?>
         <?php do_settings_sections('sdj_pip_plugin') ?>
     
-        <input name="Submit" type="submit" value="<?php esc_attr_e('Save Changes'); ?>" />
+        <input style="margin-left: 170px; margin-top: 10px;" name="Submit" type="submit" value="<?php esc_attr_e('Save Changes'); ?>" />
     
         </form>
-        <h2>Buy Me a Beer?</h2>
-        <p>If you'd like to say thanks for this amazing free plugin, you can buy me a beer by using the donate button below. Thanks</p>   
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value="TS33GLQZYJ3RA">
-                <input style="text-align:center;" type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal — The safer, easier way to pay online.">
-                <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-            </form>
     </div>
-    <div style="float:left; width:260px;">
+    
+    <div style="float:left; width: 300px;">
         <h2>Pin Types</h2>
         <p style="text-align:center;"><img src="http://farm8.staticflickr.com/7066/6809517894_e1392c2428.jpg"></p>
         <h2>Follow Button Types</h2>
         <p style="text-align:center;"><img src="http://farm8.staticflickr.com/7190/6809517936_3c17ce5872_m.jpg"></p>
+    </div>
+    
+    <div style="float:left; width:260px;">
+        <h2>Credits</h2>
+        
+        <div id="fb-root"></div>
+		<script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        
+        <div class="fb-like" data-href="http://www.shanejones.co.uk/wordpress-plugins/pinterest-image-pin-for-wordpress-77/" data-send="false" data-layout="button_count" data-width="250" data-show-faces="false"></div>
+        <br><br>
+        <a href="https://twitter.com/shanejones" class="twitter-follow-button" data-show-count="false">Follow @shanejones</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-text="Pinterest Image Pin for WordPress" data-via="shanejones" data-related="mycleveragency" data-hashtags="wordpress">Tweet</a>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		<br><br>
+        <!-- Place this tag where you want the su badge to render -->
+        <su:badge layout="3" location="http://www.shanejones.co.uk/wordpress-plugins/pinterest-image-pin-for-wordpress-77/"></su:badge>
+        
+        <!-- Place this snippet wherever appropriate --> 
+         <script type="text/javascript"> 
+         (function() { 
+             var li = document.createElement('script'); li.type = 'text/javascript'; li.async = true; 
+             li.src = window.location.protocol + '//platform.stumbleupon.com/1/widgets.js'; 
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(li, s); 
+         })(); 
+         </script>
+
+        
+        <p>If you'd like to say thanks for this amazing free plugin, you can always drop me a donation?</p>   
+            <div style="margin:auto; width:160px">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="TS33GLQZYJ3RA">
+                    <input style="text-align:center;" type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal — The safer, easier way to pay online.">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+                </form>
+            </div>
     </div>
 
 <?
