@@ -38,19 +38,20 @@ function sdj_pip_modify_content($content){
 					break;
 			}
 
-		$content = preg_replace_callback(
-					'/(<img([^>]*)>)/i',
-					create_function(
-						'$matches',
-						'return CREDIT_HEAD . 
-								"<div class=\"sdj_pinterest_wrap\">$matches[0]<div class=\"linkbox\">" . 
-								"<a href=\"http://pinterest.com/pin/create/button/?media=" . urlencode( 
-									substr(substr("$matches[0]", strpos("$matches[0]","src=\"")+5), 0,strpos(substr("$matches[0]", strpos("$matches[0]","src=\"")+5),"\""))) .
-								"&url=".urlencode(get_permalink())."\" class=\"pin-it-button\" count-layout=\"".TYPE."\">Pin It</a></div></div>" . 
-								CREDIT_FOOT;'
-					),
-					$content);
-					
+            define("ALIGN", "sdjpip_".$options['pin_follow_align']);
+
+            $content = preg_replace_callback(
+                        '/(<img([^>]*)>)/i',
+                        create_function(
+                            '$matches',
+                            'return CREDIT_HEAD .
+                                    "<div class=\"sdj_pinterest_wrap\">$matches[0]<div class=\"sdjpip_linkbox ".ALIGN."\">" .
+                                    "<a href=\"http://pinterest.com/pin/create/button/?media=" . urlencode(
+                                        substr(substr("$matches[0]", strpos("$matches[0]","src=\"")+5), 0,strpos(substr("$matches[0]", strpos("$matches[0]","src=\"")+5),"\""))) .
+                                    "&url=".urlencode(get_permalink())."\" class=\"pin-it-button\" count-layout=\"".TYPE."\">Pin It</a></div></div>" .
+                                    CREDIT_FOOT;'
+                        ),
+                        $content);
 					
 		if($options['pin_follow']==1){
 			
@@ -86,7 +87,7 @@ function sdj_pip_render_footer_script(){
     $options = get_option('sdj_pip_options');
 	
 	if($options['pin_credit']!=1){
-		echo '<p class="sdj_footer_link"><a href="http://www.shanejones.co.uk/wordpress-plugins/pinterest-image-pin-77/" target="_blank"> Pinterest Image Pin</a> Courtesy of <a href="http://www.shanejones.co.uk" target="_blank">Shane Jones</a></p>';
+		echo '<p class="sdjpip_footer_link"><a href="http://www.shanejones.co.uk/wordpress-plugins/pinterest-image-pin-77/" target="_blank"> Pinterest Image Pin</a> Courtesy of <a href="http://www.shanejones.co.uk" target="_blank">Shane Jones</a></p>';
 	}
 	
 	echo  CREDIT_HEAD .
@@ -204,8 +205,8 @@ function sdj_pip_admin_init(){
     add_settings_field('pin_username_string', 'Your Pinterest Handle', 'pin_username_string', 'sdj_pip_plugin', 'plugin_main');
 	add_settings_field('pin_type_drop', 'Pin Button Type', 'pin_type_drop', 'sdj_pip_plugin', 'plugin_main');
 	add_settings_field('pin_follow_type_drop', 'Follow Button Type', 'pin_follow_type_drop', 'sdj_pip_plugin', 'plugin_main');
-	
 	add_settings_field('pin_follow_optin', 'Show Follow Button', 'pin_follow_optin', 'sdj_pip_plugin', 'plugin_main');
+    add_settings_field('pin_follow_align', 'Button Alignment', 'pin_follow_align', 'sdj_pip_plugin', 'plugin_main');
 	add_settings_field('pin_credit_optin', 'Hide Credits', 'pin_credit_optin', 'sdj_pip_plugin', 'plugin_main');
 
 }
@@ -260,6 +261,26 @@ function pin_follow_type_drop() {
 			echo '>Follow '.strtoupper($pin).'</option>';	
 		}		
 			
+	echo '</select>';
+}
+
+
+function pin_follow_align() {
+    $options = get_option('sdj_pip_options');
+    echo '<select id="pin_follow_align" name="sdj_pip_options[pin_follow_align]">';
+
+		$pin_type = array('left','center','right');
+
+		foreach($pin_type as $pin){
+			echo '<option value="'.$pin.'"';
+
+			if($pin == $options['pin_follow_align']) {
+				echo ' selected';
+			}
+
+			echo '>'.$pin.'</option>';
+		}
+
 	echo '</select>';
 }
 

@@ -1,14 +1,14 @@
 <?php
 /**
  * @package Pinterest Image Pin
- * @version 0.5
+ * @version 0.6
  */
 /*
 Plugin Name: Pinterest Image Pin
 Plugin URI: http://www.shanejones.co.uk/wordpress-plugins/pinterest-image-pin-77/
 Description: This plugin will enable your sites visitors to pin individual images on Pinterest, the pin button will appear just underneath every image in the main content. It also has the option to add a Pinterest follow button to the bottom of your posts. More features and a major bug fix release coming soon.
 Author: Shane Jones
-Version: 0.5
+Version: 0.6
 Author URI: http://profiles.wordpress.org/ShaneJones/
 */
 

@@ -3,7 +3,7 @@ Contributors: ShaneJones
 Donate link: http://www.shanejones.co.uk/wordpress-plugins/pinterest-image-pin-77/
 Tags: pinterest, social, pin, pinning, image, images, sharing
 Requires at least: 2
-Tested up to: 3.3
+Tested up to: 3.3.2
 
 Adds Pinterest button to individual images for one by one image pinning. Enjoy
 
@@ -15,7 +15,7 @@ It gives you the option to chose from the 3 versions of pinterest buttons to app
 
 It also has the option to add a Pinterest follow button to the bottom of your posts. 
 
-More features and a major bug fixing release coming soon.
+More features and a major bug fixing release coming in version 1.0
 
 == Installation ==
 
@@ -36,6 +36,10 @@ If you have any Q's you can get in touch with me on my Twitter account @shanejon
 4. The default version of the button
 
 == Changelog ==
+
+= 0.6 =
+* Addition of image alignment
+* CSS Class updates
 
 = 0.5 =
 * Fixing screenshots
