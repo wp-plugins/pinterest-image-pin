@@ -1,0 +1,29 @@
+.sdj_pinterest_wrap {
+
+}
+
+.sdjpip_linkbox {
+	margin: 0px 0 0 0px;
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: 5px 10px;
+	position: relative;
+	top: -26px;
+}
+
+.sdjpip_footer_link {
+	font-size:11px;
+	text-align:right;
+}
+
+.sdjpip_left {
+    text-align: left;
+}
+
+.sdjpip_center {
+    text-align: center;
+}
+
+.sdjpip_right {
+    text-align: right;
+}
+
